@@ -217,11 +217,6 @@ public class Arbol {
                 return null;
             }
         }
-
-        if (T.getData() == x) {
-            return null;
-        }
-
         T.setHI(delHojaR(T.getHI(), x));
         T.setHD(delHojaR(T.getHD(), x));
         return T;
@@ -257,8 +252,35 @@ public class Arbol {
         }
         boolean iHI = isDescIncompleto(T.getHI(), x, incompleto);
         boolean iHD = isDescIncompleto(T.getHD(), x, incompleto);
-        return iHI||iHD;
-        
+        return iHI || iHD;
+    }
+
+    public boolean inBunch(int x) {
+       return inBunch(Raiz, x);
+    }
+
+    private boolean inBunch(Nodo T, int x) {
+        if (T == null) {
+            return false;
+        }
+        if (hoja(T)) {
+            return false;
+        }
+        if (T.cantHijos() == 2) {
+            if (T.getData() == x && hoja(T.getHI()) && hoja(T.getHD())) {
+                return true;
+            }
+            if (hoja(T.getHI()) && T.getHI().getData() == x) {
+                return true;
+            }
+            if (hoja(T.getHD()) && T.getHD().getData() == x) {
+                return true;
+            }
+
+        }
+        boolean bunchHI = inBunch(T.getHI(), x);
+        boolean bunchHD = inBunch(T.getHD(), x);
+        return bunchHI || bunchHD;
 
     }
 }

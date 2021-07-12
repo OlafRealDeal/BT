@@ -3,7 +3,7 @@ package BT;
 
 
 public class Main {
-    private static final int dataA[][]={{10,60,90},{60,20,25},{20,50},{50,70,40},{25,80},{90,15},{15,65,55},{55,75,30}}; 
+    private static final int dataA[][]={{30,60,25},{60,70,15},{70,35},{15,40,80},{25,50,90},{50,5,10},{90,20,45}}; 
     private static final int dataB[][]={ {10,20,30}, {20,10}, {30, 40}};
     
     private static Arbol load(int v[][]){
@@ -26,14 +26,15 @@ public class Main {
         
         A.Inorden();
         A.niveles();
-        System.out.println(A.isDescIncompleto(25));
-        System.out.println(A.isDescIncompleto(90));
-        System.out.println(A.isDescIncompleto(55));
-        System.out.println(A.isDescIncompleto(75));
-        System.out.println(A.isDescIncompleto(100));
-        System.out.println(A.isDescIncompleto(10));
-        System.out.println(A.isDescIncompleto(40));
-        System.out.println(A.isDescIncompleto(80));
+        System.out.println(A.inBunch(100));
+        System.out.println(A.inBunch(70));
+        System.out.println(A.inBunch(50));
+        System.out.println(A.inBunch(5));
+        System.out.println(A.inBunch(20));
+        System.out.println(A.inBunch(25));
+        System.out.println(A.inBunch(80));
+        
+       
     }
     
 }
