@@ -1,9 +1,9 @@
 package BT;
 
-import ADT_Arbol_B.Arbol;
+
 
 public class Main {
-    private static final int dataA[][]={{30,60,25},{60,70,15},{25,50},{70,35},{15,80},{50,5,10}}; 
+    private static final int dataA[][]={{50,20,70},{20,40,10},{40,60},{10,80},{70,45,30},{45,5,15}}; 
     private static final int dataB[][]={ {10,20,30}, {20,10}, {30, 40}};
     
     private static Arbol load(int v[][]){
@@ -26,14 +26,8 @@ public class Main {
         
         A.Inorden();
         A.niveles();
-        
-        A.delIncompleto(25);
-        
-        A.Inorden();
+        A.delHojaR(5);
         A.niveles();
-        
-//        Arbol B = load(dataB);  //Otro árbol
-//        B.delCuasiHoja(20);
     }
     
 }

@@ -205,5 +205,24 @@ public class Arbol {
             }
         }
     }
+    public void delHojaR(int x) {
+        delHojaR(Raiz, x);
+    }
+
+    private Nodo delHojaR(Nodo T, int x) {
+        if (T == null) 
+            return null;  
+        
+        if (hoja(T)) 
+            if (T.getData() == x) 
+                return null; 
+        
+        if(T.getData()== x)
+            return null;      
+        
+        T.setHI(delHojaR(T.getHI(), x));
+        T.setHD(delHojaR(T.getHD(), x));
+        return T;   
+    }
 
 }
