@@ -3,7 +3,7 @@ package BT;
 
 
 public class Main {
-    private static final int dataA[][]={{50,20,70},{20,40,10},{40,60},{10,80},{70,45,30},{45,5,15}}; 
+    private static final int dataA[][]={{10,60,90},{60,20,25},{20,50},{50,70,40},{25,80},{90,15},{15,65,55},{55,75,30}}; 
     private static final int dataB[][]={ {10,20,30}, {20,10}, {30, 40}};
     
     private static Arbol load(int v[][]){
@@ -26,8 +26,14 @@ public class Main {
         
         A.Inorden();
         A.niveles();
-        A.delHojaR(5);
-        A.niveles();
+        System.out.println(A.isDescIncompleto(25));
+        System.out.println(A.isDescIncompleto(90));
+        System.out.println(A.isDescIncompleto(55));
+        System.out.println(A.isDescIncompleto(75));
+        System.out.println(A.isDescIncompleto(100));
+        System.out.println(A.isDescIncompleto(10));
+        System.out.println(A.isDescIncompleto(40));
+        System.out.println(A.isDescIncompleto(80));
     }
     
 }
